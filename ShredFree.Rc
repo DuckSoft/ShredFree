@@ -1,0 +1,52 @@
+#define dlgMain 1000
+#define barProgress 1002
+#define buttonConfig 1003
+#define buttonClose 1004
+#define barStatus 1005
+#define dlgMethodConfig 1100
+#define radioZeroAll 1101
+#define radioPseudo 1102
+#define radioDodC 1103
+#define radioDodE 1104
+#define pseudoTimes 1108
+#define dodCTimes 1111
+#define dodERounds 1114
+
+dlgMain DIALOGEX 6,96,147,117
+CAPTION "ShredFree"
+FONT 10,"Arial",400,0,0
+STYLE 0x10CE0000
+EXSTYLE 0x00000008
+BEGIN
+  CONTROL "请将文件拖入本窗口以执行粉碎。",1001,"Static",0x50000000,3,3,141,12
+  CONTROL "",barProgress,"msctls_progress32",0x50000001,0,96,147,9
+  CONTROL "&C.配置",buttonConfig,"Button",0x50010000,6,75,51,15
+  CONTROL "&X.关闭",buttonClose,"Button",0x50010000,87,75,51,15
+  CONTROL "就绪",barStatus,"msctls_statusbar32",0x50000003,33,66,18,9
+END
+
+dlgMethodConfig DIALOGEX 20,20,279,153
+CAPTION "配置擦除算法..."
+FONT 10,"Arial",400,0,0
+LANGUAGE 4,2
+STYLE 0x10EF0000
+EXSTYLE 0x00000008
+BEGIN
+  CONTROL "ZeroAll",radioZeroAll,"Button",0x50010009,6,12,99,9
+  CONTROL "Pseudo",radioPseudo,"Button",0x50010009,6,21,99,9
+  CONTROL "DOD 5220.22-M 8-306. C",radioDodC,"Button",0x50010009,6,30,99,9
+  CONTROL "DOD 5220.22-M 8-306. E",radioDodE,"Button",0x50010009,6,39,99,9
+  CONTROL "算法选择",1105,"Button",0x50000007,0,0,111,54
+  CONTROL "Pseudo",1106,"Button",0x50000007,0,57,111,27
+  CONTROL "擦除次数：",1107,"Static",0x50000000,6,69,48,9
+  CONTROL "5",pseudoTimes,"Edit",0x50010000,84,66,18,12,0x00000200
+  CONTROL "DOD 5220.22-M 8-306. C",1109,"Button",0x50000007,0,87,111,27
+  CONTROL "擦除次数：",1110,"Static",0x50000000,6,99,48,9
+  CONTROL "5",dodCTimes,"Edit",0x50010000,84,96,18,12,0x00000200
+  CONTROL "DOD 5220.22-M 8-306. E",1112,"Button",0x50000007,0,117,111,30
+  CONTROL "擦除回数：",1113,"Static",0x50000000,6,129,48,9
+  CONTROL "1",dodERounds,"Edit",0x50010000,84,126,18,12,0x00000200
+  CONTROL "算法介绍",1115,"Button",0x50000007,114,0,144,147
+  CONTROL "",1116,"Edit",0x50210804,117,9,138,135,0x00000200
+END
+

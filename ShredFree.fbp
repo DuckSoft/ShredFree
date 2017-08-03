@@ -1,0 +1,23 @@
+[Project]
+Version=3
+Api=fb (FreeBASIC),win (Windows)
+Description=ShredFree
+[Make]
+Recompile=0
+Module=Module Build,fbc -c
+Current=1
+1=Windows GUI,fbc -s gui
+2=Windows GUI (Debug),fbc -s gui -g
+[TabOrder]
+TabOrder=3,1
+[File]
+1=ShredFree.Bas
+2=ShredFree.Bi
+3=ShredFree.Rc
+[BreakPoint]
+1=
+2=
+[FileInfo]
+2=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1=0,37,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+3=0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

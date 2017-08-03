@@ -1,0 +1,13 @@
+#define dlgMain                 1000
+#define barProgress             1002
+#define buttonConfig            1003
+#define buttonClose             1004
+#define barStatus               1005
+#define dlgMethodConfig         1100
+#define radioZeroAll            1101
+#define radioPseudo             1102
+#define radioDodC               1103
+#define radioDodE               1104
+#define pseudoTimes             1108
+#define dodCTimes               1111
+#define dodERounds              1114
