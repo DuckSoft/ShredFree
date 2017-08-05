@@ -11,11 +11,15 @@
 #define pseudoTimes 1108
 #define dodCTimes 1111
 #define dodERounds 1114
+#define cmdSaveSettings 1117
+#define cmdDefaultConfig 1118
+#define cmdExitConfig 1119
 
 dlgMain DIALOGEX 6,96,147,117
 CAPTION "ShredFree"
 FONT 10,"Arial",400,0,0
-STYLE 0x10CE0000
+LANGUAGE 4,2
+STYLE 0x10CE1000
 EXSTYLE 0x00000008
 BEGIN
   CONTROL "请将文件拖入本窗口以执行粉碎。",1001,"Static",0x50000000,3,3,141,12
@@ -25,11 +29,11 @@ BEGIN
   CONTROL "就绪",barStatus,"msctls_statusbar32",0x50000003,33,66,18,9
 END
 
-dlgMethodConfig DIALOGEX 20,20,279,153
+dlgMethodConfig DIALOGEX 20,20,264,174
 CAPTION "配置擦除算法..."
 FONT 10,"Arial",400,0,0
 LANGUAGE 4,2
-STYLE 0x10EF0000
+STYLE 0x10CF1000
 EXSTYLE 0x00000008
 BEGIN
   CONTROL "ZeroAll",radioZeroAll,"Button",0x50010009,6,12,99,9
@@ -47,6 +51,9 @@ BEGIN
   CONTROL "擦除回数：",1113,"Static",0x50000000,6,129,48,9
   CONTROL "1",dodERounds,"Edit",0x50010000,84,126,18,12,0x00000200
   CONTROL "算法介绍",1115,"Button",0x50000007,114,0,144,147
-  CONTROL "",1116,"Edit",0x50210804,117,9,138,135,0x00000200
+  CONTROL "ZeroAll: ...\r\nPseudo: ...\r\nDOD C: ...\r\nDOD E: ...",1116,"Edit",0x50210804,117,9,138,135,0x00000200
+  CONTROL "&S.保存配置",cmdSaveSettings,"Button",0x50010001,108,153,57,15
+  CONTROL "&R.恢复默认配置",cmdDefaultConfig,"Button",0x50010000,12,153,81,15
+  CONTROL "&X.关闭",cmdExitConfig,"Button",0x50010000,183,153,57,15
 END
 

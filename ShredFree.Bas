@@ -1,6 +1,7 @@
 #Include Once "windows.bi"
 #Include Once "win/commctrl.bi"
 #Include "ShredFree.bi"
+#Include "ConfigManager.Bas"
 
 Dim Shared hInstance As HMODULE
 
@@ -16,7 +17,7 @@ Declare Function DlgProc_MethodConfig(ByVal hWin As HWND, ByVal uMsg As UINT, By
 Function DlgProc(ByVal hWin As HWND,ByVal uMsg As UINT,ByVal wParam As WPARAM,ByVal lParam As LPARAM) As Integer
 	Select Case uMsg
 		Case WM_INITDIALOG
-			'
+			'TODO: Dragdrop
 		Case WM_CLOSE
 			EndDialog(hWin, 0)
 			'
@@ -42,7 +43,7 @@ End Function
 Function DlgProc_MethodConfig(ByVal hWin As HWND,ByVal uMsg As UINT,ByVal wParam As WPARAM,ByVal lParam As LPARAM) As Integer
 	Select Case uMsg
 		Case WM_INITDIALOG
-			'
+			RenderConfig(hWin)
 		Case WM_CLOSE
 			EndDialog(hWin, 0)
 			'
@@ -50,9 +51,18 @@ Function DlgProc_MethodConfig(ByVal hWin As HWND,ByVal uMsg As UINT,ByVal wParam
 			Dim As Long id = LoWord(wParam)
 			Dim As Long event = HiWord(wParam)
 			
-			'Select Case id
-
-			'End Select
+			Select Case id
+				Case cmdExitConfig
+					EndDialog(hWin, 0)
+				Case cmdSaveSettings
+					WriteConfig(GrabConfig(hWin))
+					MessageBox(hWin,"设置保存成功！",appName,MB_ICONINFORMATION Or MB_OK)
+					RenderConfig(hWin)
+				Case cmdDefaultConfig
+					WriteConfig(GetDefaultConfig())
+					MessageBox(hWin,"已恢复默认设置！",appName,MB_ICONINFORMATION Or MB_OK)
+					RenderConfig(hWin)
+			End Select
 		Case Else
 			Return FALSE
 			'

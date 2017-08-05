@@ -11,3 +11,6 @@
 #define pseudoTimes             1108
 #define dodCTimes               1111
 #define dodERounds              1114
+#define cmdSaveSettings         1117
+#define cmdDefaultConfig        1118
+#define cmdExitConfig           1119
