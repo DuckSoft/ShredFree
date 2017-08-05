@@ -27,7 +27,7 @@ Sub Shred_ZeroAll(filepath As String)
 		Put #1, v, i
 	Next
 	Close #1
-	'Kill filepath
+	Kill filepath
 End Sub
 
 Sub Shred_Pseudo(filepath As String, times As UINT)
@@ -44,7 +44,7 @@ Sub Shred_Pseudo(filepath As String, times As UINT)
 	Next j
 	
 	Close #1
-	'Kill filepath
+	Kill filepath
 End Sub
 
 Sub Shred_DODC(filepath As String, times As UINT)
@@ -60,7 +60,7 @@ Sub Shred_DODC(filepath As String, times As UINT)
 	Next
 	
 	Close #1
-	'Kill filepath
+	Kill filepath
 End Sub
 
 Sub Shred_DODE(filepath As String, rounds As UINT)
@@ -86,5 +86,5 @@ Sub Shred_DODE(filepath As String, rounds As UINT)
 	Next
 	
 	Close #1
-	'Kill filepath
+	Kill filepath
 End Sub
