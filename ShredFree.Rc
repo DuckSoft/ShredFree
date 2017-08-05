@@ -51,7 +51,7 @@ BEGIN
   CONTROL "擦除回数：",1113,"Static",0x50000000,6,129,48,9
   CONTROL "1",dodERounds,"Edit",0x50010000,84,126,18,12,0x00000200
   CONTROL "算法介绍",1115,"Button",0x50000007,114,0,144,147
-  CONTROL "ZeroAll: ...\r\nPseudo: ...\r\nDOD C: ...\r\nDOD E: ...",1116,"Edit",0x50210804,117,9,138,135,0x00000200
+  CONTROL "ZeroAll: 最快，最不安全。\r\nPseudo: 较慢，比较安全。\r\nDOD C: 较快，安全度一般。\r\nDOD E: 最慢，最安全。",1116,"Edit",0x50210804,117,9,138,135,0x00000200
   CONTROL "&S.保存配置",cmdSaveSettings,"Button",0x50010001,108,153,57,15
   CONTROL "&R.恢复默认配置",cmdDefaultConfig,"Button",0x50010000,12,153,81,15
   CONTROL "&X.关闭",cmdExitConfig,"Button",0x50010000,183,153,57,15
