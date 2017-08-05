@@ -31,10 +31,12 @@ End Sub
 Sub Shred_Pseudo(filepath As String, times As UINT)
 	Open filepath For Binary Access Read Write Lock Read Write As #1
 	
-	For j = 1 To times
+	Randomize
+	
+	For j As UInteger = 1 To times
 		For i As UInteger = 1 To Lof(1)
 			Dim As UByte f
-			f = Random * 256
+			f = Rnd * 256
 			Put #1, i, f
 		Next i
 	Next j
