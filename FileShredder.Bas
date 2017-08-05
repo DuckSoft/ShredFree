@@ -54,7 +54,9 @@ Sub Shred_DODC(filepath As String, times As UINT)
 	
 	For j As UInteger = 1 To times
 		i = Rnd * 256
-		Put #1, 1, i, Lof(1)
+		For v As ULongInt = 1 To Lof(1)
+			Put #1, v, i
+		Next
 	Next
 	
 	Close #1
