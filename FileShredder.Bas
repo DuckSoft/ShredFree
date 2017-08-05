@@ -23,7 +23,9 @@ End Sub
 Sub Shred_ZeroAll(filepath As String)
 	Open filepath For Binary Access Read Write Lock Read Write As #1
 	Dim As UByte i = 0
-	Put #1, 1, i, Lof(1)
+	For v As ULongInt = 1 To Lof(1)
+		Put #1, v, i
+	Next
 	Close #1
 	'Kill filepath
 End Sub
