@@ -1,9 +1,12 @@
 #Include Once "windows.bi"
 #Include Once "win/commctrl.bi"
-#Include "ShredFree.bi"
-#Include "ConfigManager.Bas"
 
 Dim Shared hInstance As HMODULE
+
+#Include "ShredFree.bi"
+#Include "ConfigManager.Bas"
+#Include "DragdropHelper.Bas"
+#Include "FileShredder.Bas"
 
 Declare Function DlgProc(ByVal hWin As HWND, ByVal uMsg As UINT, ByVal wParam As WPARAM, ByVal lParam As LPARAM) As Integer
 Declare Function DlgProc_MethodConfig(ByVal hWin As HWND, ByVal uMsg As UINT, ByVal wParam As WPARAM, ByVal lParam As LPARAM) As Integer
@@ -15,12 +18,16 @@ Declare Function DlgProc_MethodConfig(ByVal hWin As HWND, ByVal uMsg As UINT, By
 	End
 
 Function DlgProc(ByVal hWin As HWND,ByVal uMsg As UINT,ByVal wParam As WPARAM,ByVal lParam As LPARAM) As Integer
+	Static dragDrop As DragdropHelper Ptr
+		
 	Select Case uMsg
 		Case WM_INITDIALOG
-			'TODO: Dragdrop
+			dragDrop = New DragdropHelper(hWin, ProcPtr(ShredProc))
 		Case WM_CLOSE
+			Delete dragDrop
 			EndDialog(hWin, 0)
-			'
+		Case WM_DROPFILES
+			dragDrop->OnDragDrop(wParam)
 		Case WM_COMMAND
 			Dim As Long id = LoWord(wParam)
 			Dim As Long event = HiWord(wParam)
