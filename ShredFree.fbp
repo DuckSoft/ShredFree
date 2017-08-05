@@ -2,14 +2,24 @@
 Version=3
 Api=fb (FreeBASIC),win (Windows)
 Description=ShredFree
+Grouping=1
+AddMainFiles=1
+AddModuleFiles=1
+ResExport=
+CompileIfNewer=0
+IncVersion=0
+RunCmd=0
 [Make]
 Recompile=0
-Module=Module Build,fbc -c
+Module=Module Build,fbc -s gui
 Current=1
 1=Windows GUI,fbc -s gui
 2=Windows GUI (Debug),fbc -s gui -g
+Output=
+Run=
+Delete=
 [TabOrder]
-TabOrder=8
+TabOrder=1
 [File]
 1=ShredFree.Bas
 2=ShredFree.Bi
@@ -23,6 +33,8 @@ Main=1
 7=DragdropHelper.Bi
 8=FileShredder.Bas
 9=FileShredder.Bi
+10=ProgressRender.Bas
+11=ProgressRender.Bi
 [BreakPoint]
 1=
 2=
@@ -32,13 +44,17 @@ Main=1
 6=
 8=
 9=
+10=
+11=
 [FileInfo]
 2=0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1=0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1=0,7,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 3=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-4=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-5=0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-6=0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-7=0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-8=0,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-9=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+4=0,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+5=0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+6=0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+7=0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+8=0,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+9=0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+11=0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

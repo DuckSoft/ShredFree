@@ -1,4 +1,4 @@
-#Include "DragdropHelper.Bi"
+#Include Once "DragdropHelper.Bi"
 
 Constructor DragdropHelper(hWin As HANDLE, fHandler As DRAGDROPCALLBACK)
 	This.hWnd = hWin
@@ -16,6 +16,8 @@ Sub DragdropHelper.OnDragDrop(ByVal wParam As WPARAM)
 	
 	For i As UINT32 = 0 To filenum-1
 		DragQueryFile(Cast(HDROP, wParam), i, @buf, 255)
+		renderProgress->Progress(buf, i+1, filenum)
 		This.DragDropFileHandler(buf)
 	Next
+	renderProgress->Done
 End Sub

@@ -1,8 +1,8 @@
 #define dlgMain 1000
-#define barProgress 1002
 #define buttonConfig 1003
 #define buttonClose 1004
 #define barStatus 1005
+#define barProgress 1002
 #define dlgMethodConfig 1100
 #define radioZeroAll 1101
 #define radioPseudo 1102
@@ -23,10 +23,10 @@ STYLE 0x10CE1000
 EXSTYLE 0x00000008
 BEGIN
   CONTROL "请将文件拖入本窗口以执行粉碎。",1001,"Static",0x50000000,3,3,141,12
-  CONTROL "",barProgress,"msctls_progress32",0x50000001,0,96,147,9
   CONTROL "&C.配置",buttonConfig,"Button",0x50010000,6,75,51,15
   CONTROL "&X.关闭",buttonClose,"Button",0x50010000,87,75,51,15
   CONTROL "就绪",barStatus,"msctls_statusbar32",0x50000003,33,66,18,9
+  CONTROL "",barProgress,"msctls_progress32",0x50000001,0,96,147,9
 END
 
 dlgMethodConfig DIALOGEX 20,20,264,174

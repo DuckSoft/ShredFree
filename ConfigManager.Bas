@@ -1,7 +1,4 @@
-#Include "ConfigManager.Bi"
-
-Const strIniPath As String = ".\config.ini"
-Const appName As String = "ShredFree"
+#Include Once "ConfigManager.Bi"
 
 Function ReadConfig() As Config
 	Dim As Config config

@@ -1,8 +1,8 @@
 #define dlgMain                 1000
-#define barProgress             1002
 #define buttonConfig            1003
 #define buttonClose             1004
 #define barStatus               1005
+#define barProgress             1002
 #define dlgMethodConfig         1100
 #define radioZeroAll            1101
 #define radioPseudo             1102

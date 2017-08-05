@@ -18,6 +18,9 @@ Const PSEUDOTIMES_DEFAULT As UINT = 5
 Const DODCTIMES_DEFAULT As UINT = 5
 Const DODEROUNDS_DEFAULT As UINT = 1
 
+Const strIniPath As String = ".\config.ini"
+Const appName As String = "ShredFree"
+
 '===============
 ' 配置数据类型
 '===============

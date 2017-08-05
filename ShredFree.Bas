@@ -1,12 +1,19 @@
 #Include Once "windows.bi"
 #Include Once "win/commctrl.bi"
 
-Dim Shared hInstance As HMODULE
+#Include Once "ShredFree.Bi"
+#Include Once "ConfigManager.Bi"
+#Include Once "ProgressRender.Bi"
+#Include Once "DragdropHelper.Bi"
+#Include Once "FileShredder.Bi"
 
-#Include "ShredFree.bi"
-#Include "ConfigManager.Bas"
-#Include "DragdropHelper.Bas"
-#Include "FileShredder.Bas"
+Dim Shared hInstance As HMODULE
+Dim Shared renderProgress As ProgressRender Ptr
+
+#Include Once "ConfigManager.Bas"
+#Include Once "ProgressRender.Bas"
+#Include Once "DragdropHelper.Bas"
+#Include Once "FileShredder.Bas"
 
 Declare Function DlgProc(ByVal hWin As HWND, ByVal uMsg As UINT, ByVal wParam As WPARAM, ByVal lParam As LPARAM) As Integer
 Declare Function DlgProc_MethodConfig(ByVal hWin As HWND, ByVal uMsg As UINT, ByVal wParam As WPARAM, ByVal lParam As LPARAM) As Integer
@@ -19,12 +26,14 @@ Declare Function DlgProc_MethodConfig(ByVal hWin As HWND, ByVal uMsg As UINT, By
 
 Function DlgProc(ByVal hWin As HWND,ByVal uMsg As UINT,ByVal wParam As WPARAM,ByVal lParam As LPARAM) As Integer
 	Static dragDrop As DragdropHelper Ptr
-		
+
 	Select Case uMsg
 		Case WM_INITDIALOG
+			renderProgress = New ProgressRender(GetDlgItem(hWin, barProgress), GetDlgItem(hWin, barStatus))
 			dragDrop = New DragdropHelper(hWin, ProcPtr(ShredProc))
 		Case WM_CLOSE
 			Delete dragDrop
+			Delete renderProgress
 			EndDialog(hWin, 0)
 		Case WM_DROPFILES
 			dragDrop->OnDragDrop(wParam)
