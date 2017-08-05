@@ -29,7 +29,18 @@ Sub Shred_ZeroAll(filepath As String)
 End Sub
 
 Sub Shred_Pseudo(filepath As String, times As UINT)
-
+	Open filepath For Binary Access Read Write Lock Read Write As #1
+	
+	For j = 1 To times
+		For i As UInteger = 1 To Lof(1)
+			Dim As UByte f
+			f = Random * 256
+			Put #1, i, f
+		Next i
+	Next j
+	
+	Close #1
+	'Kill filepath
 End Sub
 
 Sub Shred_DODC(filepath As String, times As UINT)
