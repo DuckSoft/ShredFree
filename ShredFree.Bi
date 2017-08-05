@@ -14,3 +14,5 @@
 #define cmdSaveSettings         1117
 #define cmdDefaultConfig        1118
 #define cmdExitConfig           1119
+#define icoMain                 100
+#define IDR_VERSION1            1

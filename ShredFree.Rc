@@ -14,6 +14,8 @@
 #define cmdSaveSettings 1117
 #define cmdDefaultConfig 1118
 #define cmdExitConfig 1119
+#define IDR_VERSION1 1
+#define icoMain 100
 
 dlgMain DIALOGEX 6,96,147,117
 CAPTION "ShredFree"
@@ -56,4 +58,28 @@ BEGIN
   CONTROL "&R.ª÷∏¥ƒ¨»œ≈‰÷√",cmdDefaultConfig,"Button",0x50010000,12,153,81,15
   CONTROL "&X.πÿ±’",cmdExitConfig,"Button",0x50010000,183,153,57,15
 END
+
+IDR_VERSION1 VERSIONINFO
+FILEVERSION 0,1,0,0
+PRODUCTVERSION 0,1,0,0
+FILEOS 0x00000004
+FILETYPE 0x00000000
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "080404B0"
+    BEGIN
+      VALUE "FileVersion", "0.1.0\0"
+      VALUE "ProductVersion", "0.1.0\0"
+      VALUE "CompanyName", "DuckSoft Software Works\0"
+      VALUE "ProductName", "ShredFree\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0804, 0x04B0
+  END
+END
+
+icoMain ICON DISCARDABLE "ShredFree.ico"
 
