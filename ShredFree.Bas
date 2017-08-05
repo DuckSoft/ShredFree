@@ -29,6 +29,10 @@ Function DlgProc(ByVal hWin As HWND,ByVal uMsg As UINT,ByVal wParam As WPARAM,By
 
 	Select Case uMsg
 		Case WM_INITDIALOG
+			Dim As HICON hIcon = LoadIcon(hInstance,Cast(ZString Ptr, icoMain))
+			SendMessage(hWin, WM_SETICON, ICON_SMALL, Cast(LPARAM, hIcon))
+			SendMessage(hWin, WM_SETICON, ICON_BIG, Cast(LPARAM, hIcon))
+			
 			renderProgress = New ProgressRender(GetDlgItem(hWin, barProgress), GetDlgItem(hWin, barStatus))
 			dragDrop = New DragdropHelper(hWin, ProcPtr(ShredProc))
 		Case WM_CLOSE
